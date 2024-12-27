@@ -1,4 +1,4 @@
-// utils/email.js
+
 const nodemailer = require('nodemailer');
 const config = require('../config/config');
 
