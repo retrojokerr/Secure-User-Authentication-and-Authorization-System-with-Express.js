@@ -38,7 +38,7 @@ app.use(morgan('combined', { stream: logger.stream }));
 app.use('/api/auth', authRoutes);
 app.use('/api/protected', protectedRoutes);
 
-// Error handling middleware
+
 app.use((err, req, res, next) => {
     logger.error(err.stack);
     res.status(500).json({ message: 'Something went wrong!' });
