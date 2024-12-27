@@ -51,6 +51,6 @@ app.listen(PORT, () => {
 
 process.on('unhandledRejection', (err) => {
     logger.error('Unhandled Promise Rejection:', err);
-    // Close server & exit process
+
     process.exit(1);
 });
