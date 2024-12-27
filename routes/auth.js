@@ -1,4 +1,4 @@
-// routes/auth.js
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
@@ -77,7 +77,7 @@ router.post('/forgot-password', async (req, res) => {
     }
 });
 
-// Reset Password - Add this new route
+// Reset Password
 router.post('/reset-password', async (req, res) => {
     try {
         const { token, newPassword } = req.body;
