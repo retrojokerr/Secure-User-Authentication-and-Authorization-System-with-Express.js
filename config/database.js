@@ -1,4 +1,4 @@
-// config/database.js
+
 const mongoose = require('mongoose');
 const logger = require('../utils/logger');
 const config = require('./config');
@@ -12,7 +12,7 @@ const connectDB = async () => {
 
         await mongoose.connect(config.database.uri, options);
         
-        // Listen for connection events
+
         mongoose.connection.on('connected', () => {
             logger.info('MongoDB connected successfully');
         });
@@ -25,7 +25,7 @@ const connectDB = async () => {
             logger.warn('MongoDB disconnected');
         });
 
-        // Handle process termination
+     
         process.on('SIGINT', async () => {
             try {
                 await mongoose.connection.close();
