@@ -1,4 +1,4 @@
-// routes/protected.js
+
 const express = require('express');
 const auth = require('../middleware/auth');
 const roleCheck = require('../middleware/roleCheck');
@@ -6,7 +6,7 @@ const logger = require('../utils/logger');
 
 const router = express.Router();
 
-// Protected route for all authenticated users
+//all users
 router.get('/profile', auth, async (req, res) => {
     try {
         res.json({ message: 'Profile access granted' });
@@ -16,7 +16,7 @@ router.get('/profile', auth, async (req, res) => {
     }
 });
 
-// Protected route for admins only
+//admin
 router.get('/admin', [auth, roleCheck(['admin'])], async (req, res) => {
     try {
         res.json({ message: 'Admin access granted' });
